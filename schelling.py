@@ -115,7 +115,6 @@ model = SchellingGrid(10, 10, 60)
 model.populate()
 model.tick(50)
 print(model)
-
 '''
 
 

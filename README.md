@@ -9,6 +9,8 @@ This project implements the Schelling model in a class-based manner, with the gr
 # How to Use
 Initialise the model with your desired parameters by storing `SchellingGrid(width, height, number_of_agents)` in a value. For instance, to create a 10x10 Schelling model with 60 agents called `my_model`, use `my_model = SchellingGrid(width, height, number_of_agents)`. 
 
+Populate the grid with agents by calling `my_model.populate()`.
+
 To commence the simulation, use `my_model.tick(X)`, substituting the desired number for X. The programme will print the model in its initial state (before the simulation) and after X ticks.
 
 # Plans
