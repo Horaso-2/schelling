@@ -106,11 +106,17 @@ class SchellingAgent():
             self.model.move_agent(self)
         
 
+'''
+EXAMPLE OF USAGE:
+
+To initialise a 10x10 model with 60 agents and display it after 50 rounds:
+
 model = SchellingGrid(10, 10, 60)
 model.populate()
-model.tick(100)
-print(repr(model))
+model.tick(50)
+print(model)
 
+'''
 
 
 
