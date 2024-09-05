@@ -7,7 +7,7 @@ For more information on the Schelling model, google or read [(Schelling, 1969)](
 This project implements the Schelling model in a class-based manner, with the grid of the model being an instance of the Grid class and the agents all instances of the Agent class. Currently, it uses only two types of agents, 0 and 1, respectively.
 
 # How to Use
-Initialise the model with your desired parameters by storing `SchellingGrid(width, height, number_of_agents)` in a value. For instance, to create a 10x10 Schelling model with 60 agents called `my_model`, use `my_model = SchellingGrid(width, height, number_of_agents)`. 
+Initialise the model with your desired parameters by storing `SchellingGrid(width, height, number_of_agents)` in a value. For instance, to create a Schelling model 15 cells across and 10 cells high with 60 agents called `my_model`, use `my_model = SchellingGrid(15, 10, 60)`. 
 
 Populate the grid with agents by calling `my_model.populate()`.
 
