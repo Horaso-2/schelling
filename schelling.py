@@ -60,19 +60,19 @@ class SchellingGrid():
 class SchellingAgent():
     # preference is the proportion of other-typed agents the agent can tolerate in the neighbourhood before requesting to move
     def __init__(self, id, preference, model):
-        types = [0, 1]
+        agent_types = [0, 1]
         self.model = model
         self.id = id
         self.pref = preference 
-        self.type = random.choice(types)
+        self.agent_type = random.choice(agent_types)
         self.parent_grid = model.grid
         self.position = (0, 0)
 
     def __str__(self):
-        return f'ID: {self.id}, Type: {self.type}'
+        return f'ID: {self.id}, Type: {self.agent_type}'
     
     def __repr__(self):
-        return f'{self.type}'
+        return f'{self.agent_type}'
     
     def get_neighborhood(self):
         cell_neighb = {}
@@ -80,7 +80,7 @@ class SchellingAgent():
         for y in range(max(self.position[1] - 1, 0), min(self.position[1] + 2, self.model.height)):
             for x in range(max(self.position[0] - 1, 0), min(self.position[0] + 2, self.model.width)):
                 if self.model.grid[y][x]:
-                    cell_neighb[(x,y)] = self.model.grid[y][x].type
+                    cell_neighb[(x,y)] = self.model.grid[y][x].agent_type
                 else: 
                     cell_neighb[(x,y)] = ''
                     
@@ -95,7 +95,7 @@ class SchellingAgent():
         I EMPLOY NEGATIVE PREFERENCE IN THIS MODEL: THE AGENT MOVES 
         IFF THERE'S MORE OF OPPOSITE TYPE RATHER THAN TOO FEW OF AGENT'S OWN TYPE
         '''
-        my_types = [type for type in list(neighb.values()) if type == self.type]
+        my_types = [agent_type for agent_type in list(neighb.values()) if agent_type == self.agent_type]
         concentration = float(len(my_types)/len(neighb))
         return concentration
     
